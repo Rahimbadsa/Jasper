@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7ac70a29-d92f-40a5-8e23-150ad747330d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="80"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     farmer.`id` AS farmer_id,
+     farmer.`name` AS farmer_name,
+     farmer.`dob` AS farmer_dob,
+     farmer.`gender` AS farmer_gender,
+     farmer.`password` AS farmer_password,
+     farmer.`salary` AS farmer_salary
+FROM
+     `farmer` farmer]]>
+	</queryString>
+	<field name="farmer_id" class="java.lang.Integer"/>
+	<field name="farmer_name" class="java.lang.String"/>
+	<field name="farmer_dob" class="java.lang.String"/>
+	<field name="farmer_gender" class="java.lang.String"/>
+	<field name="farmer_password" class="java.lang.String"/>
+	<field name="farmer_salary" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band height="555" splitType="Stretch">
+			<pie3DChart>
+				<chart>
+					<reportElement x="26" y="33" width="603" height="260" uuid="5b1bfed1-48e3-43a7-b8d8-ce70443d767a"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<keyExpression><![CDATA[$F{farmer_name}]]></keyExpression>
+					<valueExpression><![CDATA[$F{farmer_salary}]]></valueExpression>
+					<labelExpression><![CDATA[$F{farmer_name}+$F{farmer_salary}]]></labelExpression>
+				</pieDataset>
+				<pie3DPlot>
+					<plot/>
+					<itemLabel/>
+				</pie3DPlot>
+			</pie3DChart>
+			<image>
+				<reportElement x="26" y="316" width="706" height="216" uuid="808cc8c5-49d5-4e74-b7c6-87fc64b5b2af"/>
+				<imageExpression><![CDATA["C:\\Users\\l2pc210e\\Desktop\\JasperChart\\web\\Images\\images.jpg"]]></imageExpression>
+			</image>
+			<pie3DChart>
+				<chart>
+					<reportElement x="44" y="334" width="236" height="182" uuid="0b7c0bad-a671-4e65-b82b-d2aa48b69a86"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<keyExpression><![CDATA[$F{farmer_name}]]></keyExpression>
+					<valueExpression><![CDATA[$F{farmer_salary}]]></valueExpression>
+					<labelExpression><![CDATA[$F{farmer_name}+$F{farmer_salary}]]></labelExpression>
+				</pieDataset>
+				<pie3DPlot>
+					<plot/>
+					<itemLabel/>
+				</pie3DPlot>
+			</pie3DChart>
+		</band>
+	</summary>
+</jasperReport>
